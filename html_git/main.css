@@ -1,0 +1,49 @@
+/* 질문1 : container-right 만 분리해서 오른쪽에 붙이는 방법 알고 싶습니다. */
+/* 질문2 : .menu-left 클래스에서 right-margin을 주면 menu-right가 이동하는데              */
+/*         왜 .container-left 클래스에서 right-margin을 주면 menu-right가 이동을 안할까요?*/
+
+body {
+    color: white;
+    margin:0;
+    padding:0;
+}
+.header {
+    background:rgb(15, 15, 58);
+    border-bottom: 5px solid lightgray;
+}
+.container {
+    /* background:tomato; */
+    width:1275px;
+    margin:auto;
+    padding: 20px 0;
+
+}
+.logo{
+    float:left;
+    margin-right:10px;
+}
+.logo img{
+    display:block; /*로고 밑의 여백을 지움*/
+
+}
+.container-left {
+}
+.container-right {
+}
+.menu{
+    float:left;
+}
+.menu-left{   
+    margin-right:430px;
+}
+.menu-right{
+}
+.menu-item{
+    float: left; /*메뉴 수평 : 띄우는 기능인데 수평이 적용됨*/
+    padding:8px 10px;  /*수직가운데정렬*/
+}
+.clearfix::after{
+    content:"";
+    display:block;
+    clear:both;
+}

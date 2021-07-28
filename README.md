@@ -1,2 +1,0 @@
-# KDT_HW
-Homework

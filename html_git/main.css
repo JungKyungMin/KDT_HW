@@ -2,6 +2,7 @@
 /* 질문2 : .menu-left 클래스에서 right-margin을 주면 menu-right가 이동하는데              */
 /*         왜 .container-left 클래스에서 right-margin을 주면 menu-right가 이동을 안할까요?*/
 /* reviewer 추가 */
+/* reviewer 추가2 */
 body {
     color: white;
     margin:0;

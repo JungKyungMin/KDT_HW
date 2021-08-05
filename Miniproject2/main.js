@@ -27,3 +27,18 @@ const msg = item ?
 alert(msg);
 
 // 아래에 getItemByAmount 함수를 작성하세요.
+
+
+function getItemByAmount(data, amount){
+    let best = 0;
+    let k = 0;
+    for(let i=0; i < data.length; i++){
+        if( amount >= data[i].price && data[i].price > best){
+            best = data[i].price;
+            k = i;
+        }
+    }
+
+    if(best == 0) return 0;
+    else return {name: data[k].name, price: data[k].price};    
+}

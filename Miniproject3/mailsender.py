@@ -8,6 +8,9 @@
 from NaverNewsCrawler import NaverNewsCrawler
 ####사용자로 부터 기사 수집을 원하는 키워드를 input을 이용해 입력받아 ? 부분에 넣으세요
 inputstr = input('검색어 : ')
+if '.' in inputstr:
+    inputstr = inputstr[:inputstr.index('.')]
+
 crawler = NaverNewsCrawler(inputstr)
 
 #### 수집한 데이터를 저장할 엑셀 파일명을 input을 이용해 입력받아 ? 부분에 넣으세요
@@ -21,10 +24,16 @@ import smtplib
 import re
 
 #### gmail 발송 기능에 필요한 계정 정보를 아래 코드에 입력하세요.
+import json 
+with open ('conf.json') as f:
+    config = json.load(f)
+
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 465
-SMTP_USER = 'bnioinq@gmail.com'
-SMTP_PASSWORD = 'vozoa123!@#'
+SMTP_USER = config['email']
+SMTP_PASSWORD = config['password']
+# SMTP_USER = 'bnioinq@gmail.com'
+# SMTP_PASSWORD = '1q2w3e4r'
 
 #### 아래 코드를 실행해 메일 발송에 필요한 send_mail 함수를 만드세요.
 def send_mail(name, addr, subject, contents, attachment=None):
